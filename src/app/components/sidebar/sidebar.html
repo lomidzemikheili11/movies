@@ -1,0 +1,40 @@
+<aside class="sidebar">
+
+  <div class="quick-actions">
+    <a routerLink="/trending">Movie Bot</a>
+    <a routerLink="/movies" [queryParams]="{ language: 'Georgian Dub' }">Movie Requests</a>
+  </div>
+
+  <div class="box">
+
+    <h2>Trending</h2>
+
+    <a routerLink="/movie/avatar-fire">Avatar Fire</a>
+    <a routerLink="/movie/shaman">Shaman</a>
+    <a routerLink="/movie/dongji-rescue">Dongji Rescue</a>
+
+  </div>
+
+  <div class="box">
+
+    <h2>Genres</h2>
+
+    <a routerLink="/genres" [queryParams]="{ genre: 'Action' }">Action</a>
+    <a routerLink="/genres" [queryParams]="{ genre: 'Drama' }">Drama</a>
+    <a routerLink="/genres" [queryParams]="{ genre: 'Fantasy' }">Fantasy</a>
+    <a routerLink="/genres" [queryParams]="{ genre: 'Horror' }">Horror</a>
+
+  </div>
+
+  <div class="box">
+
+    <h2>Languages</h2>
+
+    <a routerLink="/movies" [queryParams]="{ language: 'Georgian Dub' }">Georgian Dub</a>
+    <a routerLink="/movies" [queryParams]="{ language: 'English Dub' }">English Dub</a>
+    <a routerLink="/movies" [queryParams]="{ language: 'Georgian Subtitles' }">Georgian Subtitles</a>
+    <a routerLink="/movies" [queryParams]="{ language: 'English Subtitles' }">English Subtitles</a>
+
+  </div>
+
+</aside>

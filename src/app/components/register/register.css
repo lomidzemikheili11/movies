@@ -1,0 +1,105 @@
+.shell {
+  max-width: 1440px;
+  margin: 48px auto;
+  padding: 0 22px;
+}
+
+.auth-box {
+  max-width: 1440px; 
+  margin: 0 auto;
+  padding: 30px;
+  padding-left: 120px;
+  padding-right: 120px;
+  background: var(--panel);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+/* ვქმნით Grid-ს უშუალოდ ფორმისთვის */
+.auth-box form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ყოფს ორ თანაბარ სვეტად */
+  gap: 20px; /* დაშორება ინპუტებს შორის */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* აითვისებს grid სვეტის სრულ სიგანეს */
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.input-group input, .input-group select {
+  padding: 10px;
+  background: #2f3542;
+  border: 1px solid #57606f;
+  border-radius: 4px;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: #ffd322;
+}
+
+.error-msg {
+  color: #ff7512;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* ღილაკი და ლინკი რომ ორ სვეტად არ გაიყოს და ბოლოში სრულ სიგანეზე დაჯდეს, 
+  ვავალებთ, რომ ორივე სვეტი დაიკავონ (grid-column: span 2)
+*/
+.auth-btn, .login-link {
+  grid-column: span 2; 
+  justify-self: center; /* აცენტრებს ღილაკს */
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #E8985E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: #ff8a37;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+.input-group.full-width {
+  grid-column: span 2;
+}
+
+.switch-link{
+color : #ffffff;
+}

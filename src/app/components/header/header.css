@@ -1,0 +1,170 @@
+.header{
+    width:100%;
+    min-height:104px;
+    background:var(--panel);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px;
+    padding:0 34px;
+    border-bottom:4px solid #E8985E;
+    border-radius:14px 14px 0 0;
+}
+
+.logo{
+    color:var(--text);
+    font-size:28px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    white-space:nowrap;
+}
+
+.logo-mark{
+    width:46px;
+    height:46px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ff7a00,#E8985E);
+    color:#fff;
+    font-size:24px;
+}
+
+.main-nav{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.main-nav a{
+    color:var(--text);
+    text-decoration:none;
+    padding:13px 16px;
+    border-radius:999px;
+    font-size:17px;
+}
+
+.main-nav a.active,
+.main-nav a:hover{
+    background:#E8985E;
+    color:#fff;
+}
+
+input{
+    width:100%;
+    padding:14px 18px 14px 4px;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#202027;
+    font-size:18px;
+}
+
+.search{
+    width:min(240px, 22vw);
+    background:#fff;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding-left:16px;
+    color:#8f92a3;
+}
+
+.theme-toggle,
+.login{
+    border:none;
+    border-radius:999px;
+    background:#E8985E;
+    color:#fff;
+    height:50px;
+    padding:0 24px;
+    font-weight:700;
+    text-decoration:none;
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+}
+
+.theme-toggle{
+    width:50px;
+    padding:0;
+    background:transparent;
+    color:#ffd028;
+    font-size:26px;
+}
+
+.register{
+    color:var(--text);
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+@media (max-width: 980px){
+    .header{
+        min-height:auto;
+        padding:18px;
+        flex-wrap:wrap;
+        border-radius:0;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .main-nav{
+        width:100%;
+        overflow-x:auto;
+        order:4;
+        padding-bottom:4px;
+    }
+
+    .search{
+        flex:1;
+        width:auto;
+    }
+
+    .register,
+    .login{
+        display:none;
+    }
+}
+
+@media (max-width: 620px){
+    .main-nav{
+        display:none;
+    }
+
+    .logo{
+        max-width:calc(100% - 64px);
+    }
+
+    .search{
+        order:3;
+        flex-basis:100%;
+    }
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: #E8985E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #ff8a37;
+}

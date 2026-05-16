@@ -1,0 +1,116 @@
+<div class="shell">
+    <app-header></app-header>
+
+    <div class="auth-box">
+        <h2>Sign Up</h2>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-group">
+                <label>First Name</label>
+                <input type="text" formControlName="firstName" placeholder="Enter your first name">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid">
+                    First name is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" formControlName="lastName" placeholder="Enter your last name">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">
+                    Last name is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Age</label>
+                <input type="number" formControlName="age" placeholder="Enter your age">
+                <span class="error-msg" *ngIf="registerForm.get('age')?.touched && registerForm.get('age')?.invalid">
+                    Please enter a valid age
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Gender</label>
+                <select formControlName="gender">
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+                <span class="error-msg"
+                    *ngIf="registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid">
+                    Gender is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Address</label>
+                <input type="text" formControlName="address" placeholder="Enter your address">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.invalid">
+                    Address is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" formControlName="phone" placeholder="Enter your phone number">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid">
+                    Phone number is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Zip Code</label>
+                <input type="text" formControlName="zipcode" placeholder="Enter your zipcode">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('zipcode')?.touched && registerForm.get('zipcode')?.invalid">
+                    Zip code is required
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" formControlName="email" placeholder="example@gmail.com">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+                    Please enter a valid email address
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" formControlName="password" placeholder="Minimum 6 characters">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+                    Password must be at least 6 characters long
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" placeholder="Re-enter your password">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.hasError('passwordMismatch')">
+                    Passwords must match
+                </span>
+            </div>
+
+            <div class="input-group full-width">
+                <label>Avatar Image URL</label>
+                <input type="text" formControlName="avatar" placeholder="https://example.com/image.jpg">
+                <span class="error-msg"
+                    *ngIf="registerForm.get('avatar')?.touched && registerForm.get('avatar')?.invalid">
+                    Avatar URL is required
+                </span>
+            </div>
+
+            <button type="submit" class="auth-btn">Register</button>
+
+            <a routerLink="/login" routerLinkActive="active"  class="switch-link">Already have an account? Sign In</a>
+        </form>
+    </div>
+</div>

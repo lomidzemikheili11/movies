@@ -1,0 +1,20 @@
+<a class="movie-card" [routerLink]="['/movie', movie._id]">
+  <img [src]="movie.image" [alt]="movie.title">
+
+  <div class="card-shade"></div>
+
+  <div class="movie-meta">
+    <p>
+      <span>{{ movie.year }}</span>
+      <span>💬 {{ movie.comments }}</span>
+      <span class="rating">★ {{ movie.rating }}</span>
+    </p>
+
+    <h3>{{ movie.title }}</h3>
+
+    <div class="badges">
+      <span>{{ movie.language }}</span>
+      <span>{{ movie.genre }}</span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,27 @@
+<main class="page-shell">
+  <app-header></app-header>
+
+  <div class="content-layout">
+    <section class="catalog">
+      <div class="catalog-head">
+        <div>
+          <h1>Genres</h1>
+          <p>Selected genre: {{ selected }}</p>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <a routerLink="/genres">All</a>
+        <a *ngFor="let genre of genres" routerLink="/genres" [queryParams]="{ genre: genre }">{{ genre }}</a>
+      </div>
+
+      <div class="catalog-grid">
+        <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+      </div>
+    </section>
+
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <app-footer></app-footer>
+</main>

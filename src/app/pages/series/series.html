@@ -1,0 +1,22 @@
+<main class="page-shell">
+  <app-header></app-header>
+
+  <div class="content-layout">
+    <section class="catalog">
+      <div class="catalog-head">
+        <div>
+          <h1>Series</h1>
+          <p>Popular series and new seasons.</p>
+        </div>
+      </div>
+
+      <div class="catalog-grid">
+        <app-movie-card *ngFor="let movie of series" [movie]="movie"></app-movie-card>
+      </div>
+    </section>
+
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <app-footer></app-footer>
+</main>

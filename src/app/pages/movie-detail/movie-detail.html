@@ -1,0 +1,29 @@
+<main class="page-shell">
+  <app-header></app-header>
+
+  <section class="detail-page" *ngIf="movie; else missing">
+    <img [src]="movie.image" [alt]="movie.title">
+
+    <div class="detail-content">
+      <p class="eyebrow">{{ movie.year }} • {{ movie.genre }} • {{ movie.language }}</p>
+      <h1>{{ movie.title }}</h1>
+      <p class="rating">★ {{ movie.rating }} · 💬 {{ movie.comments }}</p>
+
+      <div class="actions">
+        <button>Watch Now</button>
+        <a routerLink="/movies">Back to List</a>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #missing>
+    <section class="detail-page missing">
+      <div>
+        <h1>Movie not found</h1>
+        <a routerLink="/movies">Back to Movies</a>
+      </div>
+    </section>
+  </ng-template>
+
+  <app-footer></app-footer>
+</main>

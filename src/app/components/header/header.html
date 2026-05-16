@@ -1,0 +1,41 @@
+<header class="header">
+
+  <div class="logo">
+    <span class="logo-mark">▶</span>
+    GE-Movies
+  </div>
+
+  <nav class="main-nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Explore</a>
+    <a routerLink="/movies" routerLinkActive="active">Movies</a>
+    <a routerLink="/series" routerLinkActive="active">Series</a>
+    <a routerLink="/trending" routerLinkActive="active">Trending</a>
+    <a routerLink="/genres" routerLinkActive="active">Genres</a>
+    <a routerLink="/years" routerLinkActive="active">Years</a>
+  </nav>
+
+  <form class="search" (ngSubmit)="submitSearch()">
+    <span>⌕</span>
+    <input name="search" type="text" placeholder="Search" [(ngModel)]="search">
+  </form>
+
+  <button class="theme-toggle" type="button" (click)="toggleTheme()" title="Tema degistir">
+    {{ isDark ? '☀' : '☾' }}
+  </button>
+
+  <ng-container *ngIf="authService.isLoggedIn()">
+    <span class="register" style="display: inline-flex; align-items: center; gap: 8px; border: none; padding: 0;">
+      <img *ngIf="authService.currentUser()?.avatar" [src]="authService.currentUser().avatar" alt="Avatar"
+        style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;" />
+      {{ authService.currentUser()?.firstName || 'User' }}
+    </span>
+
+    <button class="login" type="button" (click)="onLogout()">Logout</button>
+  </ng-container>
+
+  <ng-container *ngIf="!authService.isLoggedIn()">
+    <a class="register" routerLink="/register" [queryParams]="{ language: 'Georgian Dub' }">Register</a>
+    <a class="login" routerLink="/login">Sign In</a>
+  </ng-container>
+
+</header>

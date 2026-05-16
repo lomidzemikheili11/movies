@@ -1,0 +1,59 @@
+<main class="shell">
+  <app-header></app-header>
+
+  <div class="layout">
+    <div class="left">
+      <div class="hero-slider">
+        <a
+          class="hero-card"
+          *ngFor="let movie of movies.slice(0, 6)"
+          [routerLink]="['/movie', movie._id]"
+        >
+          <img [src]="movie.image" [alt]="movie.title">
+
+          <div class="overlay">
+            <p>{{ movie.year }} <span>💬 {{ movie.comments }}</span> <strong>★ {{ movie.rating }}</strong></p>
+            <h2>{{ movie.title }}</h2>
+            <div class="badges">
+              <span>{{ movie.language }}</span>
+              <span>{{ movie.genre }}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <section class="upcoming">
+        <div class="section-title">
+          <h2>▻ Coming Soon</h2>
+          <a routerLink="/movies" [queryParams]="{ year: 2026 }">All Trailers ›</a>
+        </div>
+
+        <div class="upcoming-row">
+          <a class="upcoming-item" *ngFor="let movie of upcoming" [routerLink]="['/movie', movie._id]">
+            <span>{{ movie.upcomingDate }}</span>
+            <img [src]="movie.image" [alt]="movie.title">
+            <strong>{{ movie.title }}</strong>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Explore</h2>
+          <a routerLink="/movies">View All ›</a>
+        </div>
+
+        <div class="movie-grid">
+          <app-movie-card
+            *ngFor="let movie of movies.slice(0, 8)"
+            [movie]="movie"
+          ></app-movie-card>
+        </div>
+      </section>
+    </div>
+
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <app-footer></app-footer>
+</main>

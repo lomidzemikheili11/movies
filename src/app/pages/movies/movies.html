@@ -1,0 +1,43 @@
+<main class="page-shell">
+  <app-header></app-header>
+
+  <div class="content-layout">
+    <section class="catalog">
+      <div class="catalog-head">
+        <div>
+          <h1>{{ title }}</h1>
+          <p>{{ description }}</p>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <a routerLink="/movies">All</a>
+        <a *ngFor="let genre of genres" routerLink="/movies" [queryParams]="{ genre: genre }">{{ genre }}</a>
+        <a *ngFor="let language of languages" routerLink="/movies" [queryParams]="{ language: language }">{{ language }}</a>
+        <a *ngFor="let year of years" routerLink="/movies" [queryParams]="{ year: year }">{{ year }}</a>
+      </div>
+
+      <div class="catalog-grid" *ngIf="movies.length; else empty">
+        <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+      </div>
+
+      <ng-template #empty>
+        <div class="empty-state">No movies found for this filter yet.</div>
+      </ng-template>
+
+      <nav class="pagination">
+        <a class="active" routerLink="/movies">1</a>
+        <a routerLink="/movies" [queryParams]="{ year: 2025 }">2</a>
+        <a routerLink="/movies" [queryParams]="{ genre: 'Action' }">3</a>
+        <a routerLink="/movies" [queryParams]="{ language: 'Georgian Dub' }">4</a>
+        <a routerLink="/movies" [queryParams]="{ year: 2026 }">5</a>
+        <a routerLink="/movies" [queryParams]="{ year: 2025 }">Next</a>
+        <a routerLink="/movies" [queryParams]="{ year: 2026 }">Last Page</a>
+      </nav>
+    </section>
+
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <app-footer></app-footer>
+</main>
