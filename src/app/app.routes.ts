@@ -85,5 +85,5 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'movie-watch/:id', component: MovieWatch },
-  { path: '**', redirectTo: '' } // ეს იმ შემთხვევაში თუ არარსებულ გვერდზე გადავა, დააბრუნებს მთავარზე
+  { path: '**', redirectTo: 'movies' } // ეს იმ შემთხვევაში თუ არარსებულ გვერდზე გადავა, დააბრუნებს მთავარზე
 ];
