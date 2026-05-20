@@ -48,7 +48,7 @@
     bottom:0;
     width:100%;
     padding:20px 14px;
-    background:linear-gradient(transparent, rgba(0,0,0,0.95));
+    background:linear-gradient(transparent, var(--accent));
     color:white;
 }
 
