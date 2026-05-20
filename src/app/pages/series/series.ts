@@ -19,6 +19,8 @@ export class Series implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.series = this.movieService.filterMovies({ type: 'series' });
+    this.movieService.getMovies().subscribe(() => {
+      this.series = this.movieService.filterMovies({ type: 'series' });
+    });
   }
 }

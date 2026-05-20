@@ -22,10 +22,12 @@ export class Years implements OnInit {
   constructor(private movieService: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe((params) => {
-      this.selected = params.get('year') || 'All';
-      this.movies = this.movieService.filterMovies({
-        year: params.get('year'),
+    this.movieService.getMovies().subscribe(() => {
+      this.route.queryParamMap.subscribe((params) => {
+        this.selected = params.get('year') || 'All';
+        this.movies = this.movieService.filterMovies({
+          year: params.get('year'),
+        });
       });
     });
   }

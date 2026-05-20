@@ -19,12 +19,13 @@ export class Home implements OnInit {
   movies: MovieItem[] = [];
   upcoming: MovieItem[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) { }
 
-  ngOnInit(): void {
-    this.movieService.getMovies().subscribe((res) => {
-      this.movies = res.data;
-      this.upcoming = this.movieService.getUpcoming();
-    });
-  }
+  // pages/home/home.ts
+ngOnInit(): void {
+  this.movieService.getMovies().subscribe((res) => {
+    this.movies = res; // აქ იყო res.data, შეცვალეთ მხოლოდ res-ით
+    this.upcoming = this.movieService.getUpcoming();
+  });
+}
 }

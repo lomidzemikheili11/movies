@@ -22,13 +22,25 @@
     margin:12px 0 20px;
 }
 
+.detail-info p svg {
+    width:24px;
+    height:24px;
+    fill: white;
+    vertical-align: middle;
+}
+
+.detail-watch{
+    display:flex;
+    gap:12px;
+    padding:28px;
+}
 .eyebrow{
     color:var(--muted);
     margin:0;
 }
 
 .rating{
-    color:#ffd322;
+    color:#f8f8f8;
     font-size:20px;
 }
 
@@ -38,22 +50,23 @@
     margin-top:28px;
 }
 
-.detail-content button,
-.detail-content a,
+.movie-watch,
+.back-to-list,
 .missing a{
     padding:15px 30px;
+    margin-top: 150px;
     border:none;
     border-radius:999px;
     background:var(--accent);
-    color:#fff;
+    color:#ffffff;
     text-decoration:none;
     font-weight:700;
 }
 
-.detail-content a,
+.back-to-list,
 .missing a{
     background:var(--panel-strong);
-    color:var(--text);
+    color:white;
 }
 
 .missing{

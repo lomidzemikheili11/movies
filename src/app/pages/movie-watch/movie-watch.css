@@ -1,0 +1,80 @@
+.shell {
+    max-width: 1440px;
+    margin: 48px auto;
+    padding: 0 22px;
+}
+
+.container {
+    background: var(--panel);
+    border-radius: 8px;
+    min-height: 700px;
+    display: flex;
+    padding: 20px; /* დავამატე დაშორება კიდეებიდან */
+    gap: 20px;
+}
+
+.svg {
+    flex-shrink: 0; /* არ მისცე უფლება დაიკუმშოს */
+    height: 24px;
+    width: 24px;
+}
+
+.svg a {
+    display: flex;
+}
+
+.svg a svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.container2 {
+    flex: 1; /* დაიკავოს დარჩენილი მთლიანი სივრცე */
+    display: flex;
+    flex-direction: column; /* ვიდეო და ტექსტი ვერტიკალურად რომ დადგეს */
+}
+
+.container2 h1 {
+    display: flex;
+    justify-content: center; /* ცენტრში განლაგება */
+}
+
+section.detail-page {
+    display: flex;
+    flex-direction: row; /* ჰორიზონტალურად: მარცხნივ ინფო, მარჯვნივ ვიდეო */
+    gap: 40px;
+    align-items: center; /* ზემოდან გაასწორე */
+    width: 100%;
+    height: 100%;
+}
+
+.detail-content {
+    flex: 0 0 250px; /* ფიქსირებული სიგანე ინფორმაციისთვის */
+    margin-top: -120px;
+}
+
+.detail-page img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.detail-content h1 {
+    font-size: 40px;
+    line-height: 1;
+    margin: 12px 0 20px;
+}
+
+.eyebrow {
+    margin-top: 10px;
+}
+
+.video-container {
+    flex: 1; /* ვიდეომ აიღოს დარჩენილი სივრცე */
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}

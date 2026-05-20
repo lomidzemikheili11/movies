@@ -10,6 +10,7 @@ import { MovieItem, MovieService } from '../../services/movie';
 
 @Component({
   selector: 'app-genres',
+  standalone: true,
   imports: [CommonModule, RouterLink, Header, Footer, Sidebar, MovieCard],
   templateUrl: './genres.html',
   styleUrl: './genres.css',
@@ -22,10 +23,14 @@ export class Genres implements OnInit {
   constructor(private movieService: MovieService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe((params) => {
-      this.selected = params.get('genre') || 'All';
-      this.movies = this.movieService.filterMovies({
-        genre: params.get('genre'),
+    // 1. ჯერ ველოდებით სერვისიდან ფილმების ჩატვირთვას
+    this.movieService.getMovies().subscribe(() => {
+      // 2. მერე ვუსმენთ ლინკის პარამეტრებს და ვფილტრავთ ჩვეულებრივ მასივში
+      this.route.queryParamMap.subscribe((params) => {
+        this.selected = params.get('genre') || 'All';
+        this.movies = this.movieService.filterMovies({
+          genre: params.get('genre'),
+        });
       });
     });
   }

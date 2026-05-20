@@ -19,6 +19,8 @@ export class Trending implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movies = this.movieService.filterMovies({ trending: true });
+    this.movieService.getMovies().subscribe(() => {
+      this.movies = this.movieService.filterMovies({ trending: true });
+    });
   }
 }

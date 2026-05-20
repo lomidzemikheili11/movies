@@ -33,7 +33,7 @@
 
 .box a:hover,
 .quick-actions a:hover{
-    background:#E8985E;
+    background: rgb(187, 0, 0);
     color:#fff;
 }
 
@@ -49,7 +49,7 @@
     display:grid;
     place-items:center;
     text-align:center;
-    background:#E8985E;
+    background:var(--accent);;
     color:#fff;
     margin:0;
 }

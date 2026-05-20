@@ -1,0 +1,50 @@
+<main>
+    <div class="shell">
+        <app-header></app-header>
+        <div class="container">
+            <div class="svg">
+                <a routerLink="/movies"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill="#ffffff" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path>
+                            <path fill="#ffffff"
+                                d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z">
+                            </path>
+                        </g>
+                    </svg></a>
+            </div>
+            <div class="container2">
+                <h1>watch movie</h1>
+                <section class="detail-page" *ngIf="movie; else missing">
+                    <div class="detail-content">
+
+                        <h1>{{ movie.title }}</h1>
+
+                        <img [src]="movie.image" [alt]="movie.title">
+
+                        <p class="eyebrow">{{ movie.year }} • {{ movie.genre }} • {{ movie.language }}</p>
+                    </div>
+
+
+                    <div class="video-container" *ngIf="movie.url">
+                        <div style="position:relative;width:100%;overflow:hidden;padding-top:42.86%">
+                            <iframe
+                                style="position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;border:none"
+                                allow="autoplay; fullscreen" allowfullscreen [src]="movie.url | safe">
+                            </iframe>
+                        </div>
+                    </div>
+
+
+
+                </section>
+
+                <ng-template #missing>
+                    <p>Movie not found.</p>
+                </ng-template>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</main>

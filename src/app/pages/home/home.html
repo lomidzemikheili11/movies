@@ -7,7 +7,7 @@
         <a
           class="hero-card"
           *ngFor="let movie of movies.slice(0, 6)"
-          [routerLink]="['/movie', movie._id]"
+          [routerLink]="['/movie', movie.id]"
         >
           <img [src]="movie.image" [alt]="movie.title">
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="upcoming-row">
-          <a class="upcoming-item" *ngFor="let movie of upcoming" [routerLink]="['/movie', movie._id]">
+          <a class="upcoming-item" *ngFor="let movie of upcoming" [routerLink]="['/movie', movie.id]">
             <span>{{ movie.upcomingDate }}</span>
             <img [src]="movie.image" [alt]="movie.title">
             <strong>{{ movie.title }}</strong>

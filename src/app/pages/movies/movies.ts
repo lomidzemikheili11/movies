@@ -5,8 +5,8 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { Sidebar } from '../../components/sidebar/sidebar';
-import { MovieCard } from '../../components/movie-card/movie-card';
 import { MovieItem, MovieService } from '../../services/movie';
+import { MovieCard } from "../../components/movie-card/movie-card";
 
 @Component({
   selector: 'app-movies',
@@ -23,10 +23,14 @@ export class Movies implements OnInit {
   languages = ['Georgian Dub', 'English Dub', 'Georgian Subtitles', 'English Subtitles'];
   years = ['2026', '2025', '2024'];
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute) {}
+  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.route.queryParamMap.subscribe((params) => {
+ ngOnInit(): void {
+  this.movieService.getMovies().subscribe((res) => {
+     // თუ აქაც res.data გაქვთ, შეცვალეთ res-ით
+     this.movies = res; 
+  
+     this.route.queryParamMap.subscribe((params) => {
       this.movies = this.movieService.filterMovies({
         type: 'movie',
         genre: params.get('genre'),
@@ -35,5 +39,7 @@ export class Movies implements OnInit {
         search: params.get('search'),
       });
     });
-  }
+  });
+}
+
 }
