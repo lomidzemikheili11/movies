@@ -9,6 +9,8 @@ import { Years } from './pages/years/years';
 import { MovieDetail } from './pages/movie-detail/movie-detail';
 import { RegisterComponent } from './components/register/register';
 import { LoginComponent } from './components/login/login';
+import { MovieWatch } from './pages/movie-watch/movie-watch';
+import { MovieDetail } from './pages/movie-detail/movie-detail';
 
 export const routes: Routes = [
 
